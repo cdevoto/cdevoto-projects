@@ -1,0 +1,104 @@
+#created on: Sep 7, 2011
+package einstein.riddle
+
+#list any import classes here.
+
+
+
+#declare any global variables here
+
+rule "Generate Solutions"
+    salience 10000
+    no-loop 
+    when
+        $brit : Person (nationality == Nationality.BRIT)
+        $swede : Person (nationality == Nationality.SWEDE && $brit.disjoint(this))
+        $dane : Person (nationality == Nationality.DANE && $brit.disjoint(this) && $swede.disjoint(this))
+        $norwegian : Person (nationality == Nationality.NORWEGIAN && $brit.disjoint(this) && $swede.disjoint(this) && $dane.disjoint(this))
+        $german : Person (nationality == Nationality.GERMAN && $brit.disjoint(this) && $swede.disjoint(this) && $dane.disjoint(this) && $norwegian.disjoint(this))
+    then
+        Solution solution = new Solution();
+        solution.add($brit);
+        solution.add($swede);
+        solution.add($dane);
+        solution.add($norwegian);
+        solution.add($german);
+        //System.out.println("Inserting " + solution);
+        insert(solution);
+end
+
+rule "Green House Left of White House"
+    salience 9900
+    no-loop
+    
+    when
+        $solution : Solution ()
+        $person1  : Person (this memberOf $solution.persons && houseColor == HouseColor.GREEN)
+        $person2  : Person (this memberOf $solution.persons && houseColor == HouseColor.WHITE)
+        Person (this == $person1 && housePosition != ($person2.getHousePosition() - 1)) 
+    
+    then
+        //System.out.println("Retracting: " + $solution);
+        retract($solution);
+        
+end    
+
+rule "Smoke Blends Next To Pet Cat"
+    salience 9800
+    no-loop
+    
+    when
+        $solution : Solution ()
+        $person1  : Person (this memberOf $solution.persons && smoke == Smoke.BLENDS)
+        $person2  : Person (this memberOf $solution.persons && pet == Pet.CAT)
+        Person (this == $person1 && housePosition != ($person2.getHousePosition() - 1) && housePosition != ($person2.getHousePosition() + 1)) 
+    
+    then
+        //System.out.println("Retracting: " + $solution);
+        retract($solution);
+        
+end
+
+rule "Smoke Dunhill Next To Pet Horse"
+    salience 9700
+    no-loop
+    
+    when
+        $solution : Solution ()
+        $person1  : Person (this memberOf $solution.persons && smoke == Smoke.DUNHILL)
+        $person2  : Person (this memberOf $solution.persons && pet == Pet.HORSE)
+        Person (this == $person1 && housePosition != ($person2.getHousePosition() - 1) && housePosition != ($person2.getHousePosition() + 1)) 
+    
+    then
+        //System.out.println("Retracting: " + $solution);
+        retract($solution);
+        
+end    
+
+
+rule "Smoke Blends Next To Drink Water"
+    salience 9600
+    no-loop
+    
+    when
+        $solution : Solution ()
+        $person1  : Person (this memberOf $solution.persons && smoke == Smoke.BLENDS)
+        $person2  : Person (this memberOf $solution.persons && drink == Drink.WATER)
+        Person (this == $person1 && housePosition != ($person2.getHousePosition() - 1) && housePosition != ($person2.getHousePosition() + 1)) 
+    
+    then
+        //System.out.println("Retracting: " + $solution);
+        retract($solution);
+        
+end    
+
+rule "Retract Person Facts"
+    salience 9500
+    no-loop
+
+    when
+        $person : Person ()
+    then
+        retract($person)    
+end
+
