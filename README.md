@@ -7,7 +7,7 @@ Projects
 ========
 
 
-1. Einstein's Riddle
+Einstein's Riddle
 ====================
 A Drools implementation of Einstein's Riddle used to test the performance and scalability of the Drools rule engine.  This is an Eclipse project created using Drools 5.2.0, and it assumes that you have the Eclipse
 Drools Plug-in installed.
@@ -43,9 +43,6 @@ the number of facts in working memory by splitting the work across
 multiple sessions and rule sets. 
 2) The performance was less than stellar, so we will need to keep an eye
 on this as our system evolves.
-
-For those who are interested, I've attached a ZIP file containing my
-Eclipse project for solving Einstein's Riddle using Drools. 
 
 
 EINSTEIN'S RIDDLE:
