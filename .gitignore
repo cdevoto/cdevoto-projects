@@ -1,3 +1,4 @@
-EinsteinRiddle/bin/*
-
-
+.DS_Store*
+*.class
+.svn/
+bin/
