@@ -1,0 +1,4 @@
+INSTRUCTIONS:
+----------------------------------------------------------------------
+1. Make sure that all output files from a run of the Hadoop test harness are placed in the "G:\dec23_anomalies" directory.
+2. Run the ParseEntrustDataProgram.

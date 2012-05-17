@@ -1,0 +1,38 @@
+---------------------------------------------------------
+216.191.247.139
+216.191.247.141
+216.191.247.145
+216.191.247.147
+216.191.247.163
+216.191.247.203
+216.191.247.205
+216.191.247.210
+216.191.247.211
+69.164.70.230
+
+Total IPs: 10
+---------------------------------------------------------
+http://crl.entrust.net
+http://ocsp.entrust.net
+https://buy.entrust.net
+https://evupdater.entrust.net
+https://seal.entrust.net
+
+Total URLs: 5
+---------------------------------------------------------
+http://crl.entrust.net|216.191.247.145
+http://crl.entrust.net|216.191.247.163
+http://crl.entrust.net|216.191.247.209
+http://crl.entrust.net|216.191.247.227
+http://ocsp.entrust.net|
+http://ocsp.entrust.net|216.191.247.139
+http://ocsp.entrust.net|216.191.247.203
+http://ocsp.entrust.net|69.164.70.230
+https://buy.entrust.net|216.191.247.141
+https://buy.entrust.net|216.191.247.205
+https://evupdater.entrust.net|216.191.247.147
+https://evupdater.entrust.net|216.191.247.211
+https://seal.entrust.net|216.191.247.146
+https://seal.entrust.net|216.191.247.210
+
+Total IP_URLs: 14
