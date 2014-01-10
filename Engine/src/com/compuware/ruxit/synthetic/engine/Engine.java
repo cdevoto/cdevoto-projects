@@ -1,7 +1,7 @@
 package com.compuware.ruxit.synthetic.engine;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.compuware.ruxit.synthetic.di.AppContextService;
 import com.compuware.ruxit.synthetic.di.AppContextServices;
@@ -10,7 +10,7 @@ import com.compuware.ruxit.synthetic.termination.TerminationSensor;
 import com.compuware.ruxit.synthetic.termination.Terminator;
 
 public abstract class Engine implements Lifecycle {
-	private static final Log log = LogFactory.getLog(Engine.class);
+	private static final Logger log = LoggerFactory.getLogger(Engine.class);
 	
 	
 	public Engine () {}

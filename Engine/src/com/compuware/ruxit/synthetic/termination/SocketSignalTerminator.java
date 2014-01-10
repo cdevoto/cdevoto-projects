@@ -4,14 +4,14 @@ import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.compuware.ruxit.synthetic.di.AppContextService;
 import com.compuware.ruxit.synthetic.di.AppContextServices;
 
 public class SocketSignalTerminator implements Terminator {
-	private static final Log log = LogFactory.getLog(SocketSignalTerminator.class);
+	private static final Logger log = LoggerFactory.getLogger(SocketSignalTerminator.class);
 	
 	public SocketSignalTerminator () {
 	}
