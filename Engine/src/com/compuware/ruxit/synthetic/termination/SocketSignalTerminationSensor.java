@@ -86,7 +86,7 @@ public class SocketSignalTerminationSensor implements TerminationSensor {
 	private synchronized void notifyListeners () {
 		for (TerminationListener listener : listeners) {
 			try {
-			    listener.onTermination();
+			    listener.stop();
 			} catch (Exception ex) {
 				log.error("An error occurred during termination", ex);
 			}

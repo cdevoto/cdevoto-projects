@@ -71,7 +71,7 @@ public abstract class Engine implements Lifecycle {
 		}
 
 		@Override
-		public void onTermination() {
+		public void stop() {
 			terminated = true;
 			if (contextThread != null) {
 				contextThread.interrupt();
